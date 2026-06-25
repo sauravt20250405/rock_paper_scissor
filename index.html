@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Rock Paper Scissors</h1>
+  <div class="calculator">
+    <input type="text" class="display" id="screen" readonly placeholder="0">
 
-    <div class="score-board">
-        <div class="score">
-            <p>Player</p>
-            <div id="user-score">0</div>
-        </div>
-        <div class="score">
-            <p>Computer</p>
-            <div id="comp-score">0</div>
-        </div>
+    <div class="buttons">
+      <button class="clear" onclick="clearScreen()">C</button>
+      <button class="function" onclick="append('(')">(</button>
+      <button class="function" onclick="append(')')">)</button>
+      <button class="operator" onclick="append('/')">/</button>
+
+      <button class="function" onclick="runMath('sqrt')">√</button>
+      <button class="function" onclick="append('**')">xʸ</button>
+      <button class="function" onclick="runMath('percent')">%</button>
+      <button class="operator" onclick="append('*')">*</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button class="operator" onclick="append('-')">-</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button class="operator" onclick="append('+')">+</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button class="equal" style="grid-row: span 2; height: 100%;" onclick="calculate()">=</button>
+
+      <button onclick="append('0')" style="grid-column: span 2;">0</button>
+      <button onclick="append('.')">.</button>
     </div>
+  </div>
 
-    <div class="choices">
-        <button class="choice" id="r">✊</button>
-        <button class="choice" id="p">✋</button>
-        <button class="choice" id="s">✌️</button>
-    </div>
-
-    <div class="result-box">
-        <p id="action-message">Make your move to start the game.</p>
-        <p id="result-text"></p>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
